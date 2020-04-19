@@ -15,3 +15,13 @@ A modular Go tool to encrypt and decrypt using AES (128, 192, 256 bit).
       - Default values:
         - 256-bit AES
         - Encrypt form input message
+
+## Demonstration
+
+### Encryption
+
+![Encryption Mode](./images/encryption_walkthrough.png)
+
+### Decryption
+
+![Decryption Mode](./images/decryption_walkthrough.png)
