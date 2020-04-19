@@ -33,9 +33,9 @@ func encryptUI() {
 	file := handlers.UserInput("Would you like to read from a file [y|n]? ")
 	if file == "y" {
 		// Get the name of the file
-		inputFile := handlers.UserInput("Filename to read from: ")
+		filename = handlers.UserInput("File to read from (must be in current directory): ")
 		// Pass the filename to the file reader
-		secret = handlers.ReadFile(inputFile)
+		secret = handlers.ReadFile(filename)
 	} else {
 		// Ask the user to enter a message to encrypt
 		secret = []byte(handlers.UserInput("Enter the text to encrypt: "))
@@ -48,6 +48,7 @@ func encryptUI() {
 	cipher = handlers.OctetEncryptor(secret, key)
 	// Generate the file with the encrypted contents
 	handlers.GenerateFile(("Encrypted_" + filename), cipher)
+	fmt.Println("File saved to ./Encrypted_" + filename)
 }
 
 // decryptUI : main user interface for the decryption function
@@ -62,6 +63,7 @@ func decryptUI() {
 	secret = handlers.OctetDecryptor(cipher, key)
 	// Generate the file with the decrypted secret
 	handlers.GenerateFile(("Decrypted_" + filename), secret)
+	fmt.Println("File naved to ./Decrypted_" + filename)
 }
 
 // main : Main entrypoint for the program
