@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/theuhrmacher/stone-crypt-aes/handlers"
+	"github.com/theuhrmacher/stone-crypt-aes-public/stone-crypt-aes/handlers"
 )
 
 // Globally available variables
@@ -40,7 +40,7 @@ func encryptUI() {
 		// Ask the user to enter a message to encrypt
 		secret = []byte(handlers.UserInput("Enter the text to encrypt: "))
 		// Get a filename to save the encrypted message
-		filename = handlers.UserInput("Filename to write to: ")
+		filename = handlers.UserInput("Filename to write to: Encrypted_")
 	}
 	// Call on the keyUI to create a valid key
 	keyUI()
