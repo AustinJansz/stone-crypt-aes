@@ -11,10 +11,12 @@ import (
 
 // KeyFormatter : takes key as string and formats it to 32 octet array
 func KeyFormatter(keyRaw, keyLengthRaw string) []byte {
-	// Initialize variables for key and key length
+	// Variables for function use
+	// Key length stored as integer
+	var keyLength int = 0
+	// Key stored as string
+	var keyString string = ""
 	var err error
-	keyLength := 0
-	keyString := ""
 
 	// Check to see if the user selected the key length default (32)
 	if keyLengthRaw == "" {

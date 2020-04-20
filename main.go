@@ -102,6 +102,6 @@ Please select a mode:
 	case "3":
 		os.Exit(1)
 	default:
-		log.Fatal("Select a valid mode.")
+		log.Fatal("Select a valid mode. Input recieved:" + mode)
 	}
 }
