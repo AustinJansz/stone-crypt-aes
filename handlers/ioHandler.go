@@ -15,7 +15,7 @@ func UserInput(prompt string) string {
 	// Container to hold the user input
 	var inputRaw string
 	var err error
-	// Handle line endings (Windows-Unix compatibility)
+	// Retrieve the GOOS environment variable for compatibility
 	const GOOS string = runtime.GOOS
 	// Generate a new reader
 	reader := bufio.NewReader(os.Stdin)
